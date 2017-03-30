@@ -1,0 +1,240 @@
+{
+    "services":[
+                {
+                "name":"Node",
+                "identifier":"node",
+                "commands":[
+                            {
+                            "name":"Deploy",
+                            "identifier":"nodeDeploy",
+                            "type":"deploy",
+                            "bash":"npm install",
+                            "expected":"",
+                            "parameters":[]
+                            },
+                            {
+                            "name":"Start",
+                            "identifier":"nodeStart",
+                            "type":"start",
+                            "bash":"pm2 start [_rootDir][script] -s",
+                            "expected":"",
+                            "parameters":[
+                                          {
+                                          "key":"script",
+                                          "info":"Path to main script file, relative to project root."
+                                          },
+                                          {
+                                          "key":"instances",
+                                          "info":"Number of instances to run in cluster. 0 = Number of cores."
+                                          },
+                                          {
+                                          "key":"maxMemory",
+                                          "info":"Maximum memory allowed, instance will be restarted if max memory is exceeded."
+                                          }
+                                          ]
+                            },
+                            {
+                            "name":"Stop",
+                            "identifier":"nodeStop",
+                            "type":"stop",
+                            "bash":"pm2 stop [script]",
+                            "expected":"",
+                            "parameters":[]
+                            },
+                            {
+                            "name":"Restart",
+                            "identifier":"nodeRestart",
+                            "type":"restart",
+                            "bash":"pm2 restart [script]",
+                            "expected":"",
+                            "parameters":[]
+                            }
+                            ]
+                },
+                {
+                "name":"Git",
+                "identifier":"git",
+                "commands":[
+                            {
+                            "name":"Clone",
+                            "identifier":"gitClone",
+                            "type":"git",
+                            "bash":"git clone [_git]",
+                            "expected":"",
+                            "parameters":[]
+                            },
+                            {
+                            "name":"Pull",
+                            "identifier":"gitPull",
+                            "type":"git",
+                            "bash":"git pull",
+                            "expected":"",
+                            "parameters":[]
+                            },
+                            {
+                            "name":"Reset",
+                            "identifier":"gitReset",
+                            "type":"git",
+                            "bash":"TODO",
+                            "expected":"",
+                            "parameters":[]
+                            }
+                            ]
+                },
+                {
+                "name":"Nginx",
+                "identifier":"nginx",
+                "commands":[
+                            {
+                            "name":"Reload",
+                            "identifier":"nginxReload",
+                            "type":"reload",
+                            "bash":"nginx -s reload",
+                            "expected":"",
+                            "parameters":[]
+                            },
+                            {
+                            "name":"Start",
+                            "identifier":"nginxStart",
+                            "type":"start",
+                            "bash":"nginx",
+                            "expected":"",
+                            "parameters":[]
+                            },
+                            {
+                            "name":"Stop",
+                            "identifier":"nginxStop",
+                            "type":"stop",
+                            "bash":"nginx -s quit",
+                            "expected":"",
+                            "parameters":[]
+                            },
+                            {
+                            "name":"Restart",
+                            "identifier":"nginxRestart",
+                            "type":"restart",
+                            "bash":"nginx -s stop && nginx",
+                            "expected":"",
+                            "parameters":[]
+                            }
+                            ]
+                },
+                {
+                "name":"Swift",
+                "identifier":"swift",
+                "commands":[
+                            {
+                            "name":"Deploy",
+                            "identifier":"swiftDeploy",
+                            "type":"deploy",
+                            "bash":"swift package update",
+                            "expected":"",
+                            "parameters":[]
+                            },
+                            {
+                            "name":"Start",
+                            "identifier":"swiftStart",
+                            "type":"start",
+                            "bash":"swift start [script]",
+                            "expected":"",
+                            "parameters":[
+                                      {
+                                      "key":"script",
+                                      "info":"Path to main script file, relative to project root."
+                                      }
+                                      ]
+                            },
+                            {
+                            "name":"Stop",
+                            "identifier":"swiftStop",
+                            "type":"stop",
+                            "bash":"swift stop [script]",
+                            "expected":"",
+                            "parameters":[]
+                            },
+                            {
+                            "name":"Restart",
+                            "identifier":"swiftRestart",
+                            "type":"restart",
+                            "bash":"swift restart [script]",
+                            "expected":"",
+                            "parameters":[]
+                            }
+                            ]
+                },
+              {
+              "name":"Custom",
+              "identifier":"custom",
+              "commands":[
+                          {
+                          "name":"Start",
+                          "identifier":"customStart",
+                          "type":"start",
+                          "bash":"[customStartBash]",
+                          "expected":"[customStartExpected]",
+                          "parameters":[
+                                    {
+                                    "key":"customStartBash",
+                                    "info":"Bash script ro run."
+                                    },
+                                    {
+                                    "key":"customStartExpected",
+                                    "info":"Expected content (contains) of output. Optional."
+                                    }
+                                    ]
+                          },
+                          {
+                          "name":"Stop",
+                          "identifier":"customStop",
+                          "type":"stop",
+                          "bash":"[customStopBash]",
+                          "expected":"[customStopExpected]",
+                          "parameters":[
+                                    {
+                                    "key":"customStopBash",
+                                    "info":"Bash script ro run."
+                                    },
+                                    {
+                                    "key":"customStopExpected",
+                                    "info":"Expected content (contains) of output. Optional."
+                                    }
+                                    ]
+                          },
+                          {
+                          "name":"Deploy",
+                          "identifier":"customDeploy",
+                          "type":"deploy",
+                          "bash":"[customDeployBash]",
+                          "expected":"[customDeployExpected]",
+                          "parameters":[  
+                                    {  
+                                    "key":"customDeployBash",
+                                    "info":"Bash script ro run."
+                                    },
+                                    {
+                                    "key":"customDeployExpected",
+                                    "info":"Expected content (contains) of output. Optional."
+                                    }
+                                    ]
+                          },
+                          {  
+                          "name":"Restart",
+                          "identifier":"customRestart",
+                          "type":"restart",
+                          "bash":"[customRestartBash]",
+                          "expected":"[customRestartExpected]",
+                          "parameters":[  
+                                    {  
+                                    "key":"customRestartBash",
+                                    "info":"Bash script ro run."
+                                    },
+                                    {  
+                                    "key":"customRestartExpected",
+                                    "info":"Expected content (contains) of output. Optional."
+                                    }
+                                    ]
+                          }
+                          ]
+              }
+              ]
+}

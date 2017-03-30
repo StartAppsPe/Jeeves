@@ -1,0 +1,57 @@
+{
+  "nginxConfigPath": "/usr/local/etc/nginx/nginx.conf",
+  "name": "Jeeves",
+  "nginxHost": "localhost",
+  "apps": [
+  {
+  "service": "swift",
+  "name": "Jeeves",
+  "dateModified": "2017-03-30T15:53:20-0500",
+  "token": null,
+  "parameters": [
+  {
+  "key": "script",
+  "val": "main.swift"
+}
+],
+  "rootDir": "/Users/Gabriel/Dropbox/Projects/Jeeves/",
+  "owner": "Administrator",
+  "git": "https://gitlab.com/StartAppsPe/Jeeves.git",
+  "dateAdded": "2017-03-30T15:53:20-0500",
+  "order": 1,
+  "routes": [
+  {
+  "type": "proxy",
+  "path": "/jeeves",
+  "destination": "http://localhost:8765/"
+}
+]
+},
+  {
+  "service": "nginx",
+  "name": "Nginx",
+  "dateModified": "2017-03-30T15:53:20-0500",
+  "token": null,
+  "parameters": [
+],
+  "rootDir": "/usr/local/nginx/",
+  "owner": "Administrator",
+  "git": null,
+  "dateAdded": "2017-03-30T15:53:20-0500",
+  "order": 0,
+  "routes": [
+  {
+  "type": "static",
+  "path": "/nginx",
+  "destination": "html"
+}
+]
+}
+],
+  "jeevesHost": "localhost",
+  "nginxPort": 80,
+  "nginxWorkerInstances": 1,
+  "nginxWorkerConnections": 1024,
+  "jeevesPort": 8765,
+  "mainRootDir": "/Users/Gabriel/Dropbox/Projects/"
+}

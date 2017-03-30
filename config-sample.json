@@ -1,0 +1,130 @@
+{
+    "name": "ITLAB",
+    "host": "0.0.0.0",
+    "port": 8000,
+    "serverRoot": "/Users/Gabriel/Dropbox/Projects/",
+    "users": [
+        {
+            "name": "Administrator",
+            "username": "admin",
+            "password": "4c9267cb1fb319b7b69a7e417825a52051fc03c9cea56ee816e76a13bf41abdb",
+            "role": "master"
+        },
+        {
+            "name": "Gabriel Lanata",
+            "username": "gabriel",
+            "password": "5e6209c60ef219e1415f3af227e263259686c5702f1ed242b7c6d3e4e27b9b69",
+            "role": "admin"
+        },
+        {
+            "name": "Estefany Valdivieso",
+            "username": "stfny222",
+            "password": "74a6ecd202aab7181dca307310cf0b3902b08aabe08d339a296c7a0e47cf5fd6",
+            "role": "admin"
+        },
+        {
+            "name": "Alejandro Arevalo",
+            "username": "alemu108",
+            "password": "8f260bfc7e0bba5e49d9e36d9c4707dbc8b22d07b3fa9dfc99854ceafd2092ae",
+            "role": "admin"
+        }
+    ],
+    "servers": [
+        {
+            "name": "Jeeves",
+            "git": "https://gitlab.com/StartAppsPe/Jeeves.git",
+            "owner": "Administratora",
+            "dateAdded": "15/02/2016",
+            "dateUpdated": "16/02/2016",
+            "token": "2CNY347H2378NCRV083274D782H37FMHGC078EWRGH0CTHC",
+            "enabled": true,
+            "service": {
+                "type": "node",
+                "script": "server.js",
+                "instances": 1,
+                "maxMemory": "100M"
+            },
+            "route": {
+                "type": "static",
+                "path": "/admin2",
+                "destination": "/public"
+            }
+        },
+        {
+            "name": "ITLAB-proxy",
+            "git": "https://itlab:I7L4B.ulima123@gitlab.com/itlab-ulima/ITLAB-proxy.git",
+            "owner": "Administrator",
+            "dateAdded": "15/02/2016",
+            "dateUpdated": "15/02/2016",
+            "token": "4C7NY3C97Y9743Y7NFYQ97SR873HQ4V78RQW789HRUWKECRUHW",
+            "enabled": true,
+            "service": {
+                "type": "none"
+            },
+            "route": {
+                "type": "static",
+                "path": "/",
+                "destination": "/"
+            }
+        },
+        {
+            "name": "LabPortal",
+            "git": "https://itlab:I7L4B.ulima123@gitlab.com/itlab-ulima/ITLAB-LabPortal.git",
+            "owner": "Administrator",
+            "dateAdded": "15/02/2016",
+            "dateUpdated": "15/02/2016",
+            "token": "6B89T3447043N794379Y47N9043T2NY970FDHREHIUUHRHIUSDF",
+            "enabled": true,
+            "service": {
+                "type": "node",
+                "script": "server.js",
+                "instances": 1,
+                "maxMemory": "100M"
+            },
+            "route": {
+                "type": "proxy",
+                "path": "axis/services/",
+                "destination": "http://localhost:3100"
+            }
+        },
+        {
+            "name": "ULima-ULCO2",
+            "git": "https://itlab:I7L4B.ulima123@gitlab.com/itlab-ulima/ULima-ULCO2.git",
+            "owner": "Alejandro Arévalo",
+            "dateAdded": "16/02/2016",
+            "dateUpdated": "16/02/2016",
+            "token": "740DNT3SR0D78RWTNV867T4RD87NCTJG4X8FNNC46F8NR6CFGNS6DFG",
+            "enabled": true,
+            "service": {
+                "type": "java"
+            },
+            "route": {
+                "type": "proxy",
+                "path": "ulco2/",
+                "destination": "http://localhost:8080"
+            }
+        },
+        {
+            "dateAdded": "17/02/2016",
+            "token": "5aCmXT4hswSmWY0am2j63fkfyogTvv42THNevMEJuYEkNcsU6PKMtI0QkYeAPVvGS0CwOmbQ6x3wli7HjhMaYf1CAANPSvLstrlkWE2B5iSqfVnuHPGzUyxqm3HZOUz8",
+            "enabled": true,
+            "service": {
+                "type": "node",
+                "script": "server.js",
+                "instances": 1,
+                "maxMemory": "100M"
+            },
+            "route": {
+                "type": "port",
+                "path": "/tisse8",
+                "destination": "http://localhost:3001",
+                "port": "3001"
+            },
+            "name": "ULima-TISSE8",
+            "git": "https://itlab:I7L4B.ulima123@gitlab.com/itlab-ulima/ULima-TISSE8-proxy.git",
+            "owner": "Administrator",
+            "dateUpdated": "17/02/2016"
+        }
+    ],
+    "configVersion": 1
+}
